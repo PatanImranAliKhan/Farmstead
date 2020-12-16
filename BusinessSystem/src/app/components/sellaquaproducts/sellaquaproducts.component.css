@@ -1,0 +1,64 @@
+.viewcontent
+{
+    margin-top: 3%;
+    margin-left: 30%;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+.forbidden
+{
+    width: 100%;
+    height: 99vh;
+}
+
+.singleview
+{
+    margin-bottom: 20px
+}
+
+.labelview
+{
+    width: 50px;
+    margin-bottom: 5px;
+}
+
+input
+{
+    width: 50%;
+    height: 30px;
+}
+
+button
+{
+    background-color: green;
+    color: #fff;
+    text-align: center;
+    margin-left: 200px;
+}
+
+.deviceview
+{
+    position: absolute;
+    top: 18%;
+    left: 10%;
+}
+
+.deviceinput
+{
+    width: 150%;
+    height: 30px;
+}
+
+.devicebutton
+{
+    background-color: green;
+    color: #fff;
+    text-align: center;
+    margin-left: 120px;
+}
+
+a
+{
+    text-decoration: none;
+}

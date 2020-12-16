@@ -1,0 +1,77 @@
+.forbidden
+{
+    width: 100%;
+    height: 99vh;
+}
+
+.buy
+{
+    font-family: sans-serif;
+}
+
+.menu
+{
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+}
+
+.card
+{
+    width: 20%;
+    margin-top: 50px;
+    margin-left: 100px;
+    display: inline-flex;
+    text-align: center;
+    justify-content: center;
+}
+
+
+.card .display img
+{
+    width: 250px;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.display
+{
+    display: block;
+}
+
+.but1
+{
+    background-color: rgb(182, 65, 228);
+    color: #fff;
+    font-size: 12px;
+}
+
+.but2
+{
+    background-color: rgb(18, 245, 120);
+    color: #000;
+    font-size: 12px;
+    width: 100px;
+    margin-left: 55px;
+}
+
+.deviceview
+{
+    position: absolute;
+    left: 10%;
+    top: 42%;
+    right: 10%;
+}
+
+.devicecard
+{
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+.devicecard .devicedisplay img
+{
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 15px;
+}

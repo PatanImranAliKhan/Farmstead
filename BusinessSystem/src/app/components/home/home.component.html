@@ -1,0 +1,89 @@
+<app-header></app-header>
+<div class="maintop">
+    <h1 style="text-align: center; font-size: 30px;margin-top: 20px;">Home</h1>
+    <hr>
+    <div *ngIf="!deviceXs">
+        <mat-card class="leftview">
+            <h2 style="font-size: 25px;">Agriculture</h2>
+            <p>Agriculture is the science and art of cultivating plants and livestock. Agriculture was the key development in the 
+                rise of sedentary human civilization, whereby farming of domesticated species created food surpluses that enabled 
+                people to live in cities.Here you can buy the agriculture needs and here we are providing the water supply for your 
+                crop for low cost, and you can able to sell your crops here for your preferred cost and you can able to learn 
+                cultivation for any crops.
+            </p>
+            <div>
+                <button mat-raised-button color="primary" class="butt"><a class="anchor" routerLink="/login/agriculture" routerActiveLink="active">Login</a></button>
+                <button mat-raised-button color="primary" class="butt"><a class="anchor" routerLink="/signin/agriculture" routerActiveLink="active">Signin</a></button>
+            </div>
+        </mat-card>
+        <mat-card class="rightview">
+            <h2 style="font-size: 25px;">Aquaculture</h2>
+            <p>
+                The fishing industry includes any industry or activity concerned with taking, culturing, processing, preserving, storing, 
+                transporting, marketing or selling fish or fish products. It is defined by the Food and Agriculture Organization as 
+                including recreational, subsistence and commercial fishing, and the harvesting, processing, and marketing sectors. 
+                The commercial activity is aimed at the delivery of fish and other seafood products for human consumption or as input factors 
+                in other industrial processes.
+            </p>
+            <div>
+                <button mat-raised-button color="primary" class="butt"><a class="anchor" routerLink="/login/aquaculture" routerActiveLink="active">Login</a></button>
+                <button mat-raised-button color="primary" class="butt"><a class="anchor" routerLink="/signin/aquaculture" routerActiveLink="active">Signin</a></button>
+            </div>
+        </mat-card>
+        <mat-card class="middleview">
+            <h2 style="font-size: 25px;">Citizen</h2>
+            <p>
+                This is an Citizen phase where you can buy the agriculture products like fruits and vegetables and aquaculture product
+                like fishes, used for meals and fishes used to keep in your aquarium. And these ware the products which was sold by the 
+                farmers and fisherman's directly without adding any chemicals. And finally these are the Fresh products.
+            </p>
+            <div>
+                <button mat-raised-button color="primary" class="butt"><a class="anchor" routerLink="/login/citizen" routerActiveLink="active">Login</a></button>
+                <button mat-raised-button color="primary" class="butt"><a class="anchor" routerLink="/signin/citizen" routerActiveLink="active">Signin</a></button>
+            </div>
+        </mat-card>
+    </div>
+    <div *ngIf="deviceXs">
+        <mat-card class="devicecard">
+            <h2>Agriculture</h2>
+            <p>
+                Agriculture is the science and art of cultivating plants and livestock. Agriculture was the key development in the 
+                rise of sedentary human civilization, whereby farming of domesticated species created food surpluses that enabled 
+                people to live in cities.Here you can buy the agriculture needs and here we are providing the water supply for your 
+                crop for low cost, and you can able to sell your crops here for your preferred cost and you can able to learn 
+                cultivation for any crops.
+            </p>
+            <div>
+                <button mat-button color="primary"><a routerLink="/login/agriculture" routerActiveLink="active">Login</a></button>
+                <button mat-button color="primary"><a routerLink="/signin/agriculture" routerActiveLink="active">Signin</a></button>
+            </div>
+        </mat-card>
+        <mat-card class="devicecard">
+            <h2>Aquaculture</h2>
+            <p>
+                The fishing industry includes any industry or activity concerned with taking, culturing, processing, preserving, storing, 
+                transporting, marketing or selling fish or fish products. It is defined by the Food and Agriculture Organization as 
+                including recreational, subsistence and commercial fishing, and the harvesting, processing, and marketing sectors. 
+                The commercial activity is aimed at the delivery of fish and other seafood products for human consumption or as input factors 
+                in other industrial processes.
+            </p>
+            <div>
+                <button mat-button color="primary"><a routerLink="/login/aquaculture" routerActiveLink="active">Login</a></button>
+                <button mat-button color="primary" ><a routerLink="/signin/aquaculture" routerActiveLink="active">Signin</a></button>
+            </div>
+        </mat-card>
+        <mat-card class="devicecard">
+            <h2>Citizen</h2>
+            <p>
+                This is an Citizen phase where you can buy the agriculture products like fruits and vegetables and aquaculture product
+                like fishes, used for meals and fishes used to keep in your aquarium. And these ware the products which was sold by the 
+                farmers and fisherman's directly without adding any chemicals. And finally these are the Fresh products.
+            </p>
+            <div>
+                <button mat-button color="primary"><a routerLink="/login/citizen" routerActiveLink="active">Login</a></button>
+                <button mat-button color="primary" ><a routerLink="/signin/citizen" routerActiveLink="active">Signin</a></button>
+            </div>
+        </mat-card>
+    </div>
+</div>
+<app-footer></app-footer>

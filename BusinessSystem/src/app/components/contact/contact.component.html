@@ -1,0 +1,150 @@
+<app-header></app-header>
+<div>
+  <div class="contact">
+    <h1 style="text-align: center; font-size: 30px;margin-top: 20px;">Contact Us</h1>
+    <hr>
+    <div *ngIf="!deviceXs">
+      <div class="leftview">
+        <h4>Our Address</h4>
+        <address>
+          K L Deemed to be University,<br>
+          Green Fields, Vaddeswaram, <br>
+          Guntur District, A.P., INDIA. <br>
+          Pincode : 522 502.<br>
+          <i class="fa fa-phone"></i>: 0863 239 9999<br>
+          <i class="fa fa-fax"></i>: 0863-2388999<br>
+          <i class="fa fa-envelope"></i>:
+          <a href="mailto:confusion@food.net">kluniversity@kluniversity.in</a>
+        </address>
+        <p></p>
+        <div>
+          <a mat-raised-button href="tel:+85212345678"><i class="fa fa-phone"></i> Call</a>
+          <a mat-icon-button target="_blank" class="btn-google-plus" href="http://google.com/+"><i
+              class="fa fa-google-plus fa-lg"></i></a>
+          <a mat-icon-button target="_blank" class="btn-facebook" href="http://www.facebook.com/profile.php?id="><i
+              class="fa fa-facebook fa-lg"></i></a>
+          <a mat-icon-button target="_blank" class="btn-linkedin" href="http://www.linkedin.com/in/"><i
+              class="fa fa-linkedin fa-lg"></i></a>
+          <a mat-icon-button target="_blank" class="btn-twitter" href="http://twitter.com/"><i
+              class="fa fa-twitter fa-lg"></i></a>
+          <a mat-icon-button target="_blank" class="btn-youtube" href="http://youtube.com/"><i
+              class="fa fa-youtube fa-lg"></i></a>
+          <a mat-icon-button target="_blank" class="btn-mail" href="mailto:"><i class="fa fa-envelope-o fa-lg"></i></a>
+        </div>
+      </div>
+      <div class="rightview">
+        <h2>Send us your Feedback</h2><br>
+        <form [formGroup]=FeedbackForm>
+          <input type="text" formControlName="username" [disabled]="true" placeholder="name" required>
+          <input type="email" formControlName="email" placeholder="Email" required>
+          <input type="tel" formControlName="mobile" placeholder="Mobile Number" required>
+          <br>
+          <div>
+            <h2>Rate us: </h2>
+            <span class="fa fa-star fa-2x" style="margin-left: 7px;" [class.rate]="star1" (click)="Sub1()" aria-hidden="true"></span>
+            <span class="fa fa-star fa-2x" style="margin-left: 7px;" [class.rate]="star2" (click)="Sub2()" aria-hidden="true"></span>
+            <span class="fa fa-star fa-2x" style="margin-left: 7px;" [class.rate]="star3" (click)="Sub3()" aria-hidden="true"></span>
+            <span class="fa fa-star fa-2x" style="margin-left: 7px;" [class.rate]="star4" (click)="Sub4()" aria-hidden="true"></span>
+            <span class="fa fa-star fa-2x" style="margin-left: 7px;" [class.rate]="star5" (click)="Sub5()" aria-hidden="true"></span>
+          </div>
+          <br>
+          <input matInput style="width: 80%; height: 50px;" type="text" formControlName="comment" placeholder="Comment"
+            required>
+        </form>
+        <button mat-button class="submitbutton" [disabled]="FeedbackForm.invalid" (click)="Submit()">Submit</button>
+      </div>
+      <div class="correctview">
+        <div *ngFor="let feedback of feedbacks" style="display: inline-flex;margin-left: 100px;">
+          <mat-card class="displayfeedback">
+            <mat-card-header>
+              <div>
+                <mat-card-title>
+                  <p style="float: left;">{{feedback.username}}</p>
+                  <p style="position: absolute;right: 5%;"><small>Rating: {{feedback.rating}}</small></p>
+                </mat-card-title>
+              </div>
+            </mat-card-header>
+            <mat-card-content>
+              <p style="margin-left:30px;"> {{feedback.comment}}</p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button style="margin-left: 30px;" mat-icon-button color="warn"
+                aria-label="Example icon button with a heart icon">
+                <mat-icon>favorite</mat-icon>
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="deviceXs">
+      <div class="deviceview">
+        <h4>Our Address</h4>
+        <address>
+          K L Deemed to be University,<br>
+          Green Fields, Vaddeswaram, <br>
+          Guntur District, A.P., INDIA. <br>
+          Pincode : 522 502.<br>
+          <i class="fa fa-phone"></i>: 0863 239 9999<br>
+          <i class="fa fa-fax"></i>: 0863-2388999<br>
+          <i class="fa fa-envelope"></i>:
+          <a href="mailto:confusion@food.net">kluniversity@kluniversity.in</a>
+        </address>
+        <p></p>
+        <div>
+          <a mat-raised-button href="tel:+85212345678"><i class="fa fa-phone"></i> Call</a>
+          <a mat-icon-button target="_blank" class="btn-google-plus" href="http://google.com/+"><i
+              class="fa fa-google-plus fa-lg"></i></a>
+          <a mat-icon-button target="_blank" class="btn-facebook" href="http://www.facebook.com/profile.php?id="><i
+              class="fa fa-facebook fa-lg"></i></a>
+          <a mat-icon-button target="_blank" class="btn-linkedin" href="http://www.linkedin.com/in/"><i
+              class="fa fa-linkedin fa-lg"></i></a>
+          <a mat-icon-button target="_blank" class="btn-twitter" href="http://twitter.com/"><i
+              class="fa fa-twitter fa-lg"></i></a>
+          <a mat-icon-button target="_blank" class="btn-youtube" href="http://youtube.com/"><i
+              class="fa fa-youtube fa-lg"></i></a>
+          <a mat-icon-button target="_blank" class="btn-mail" href="mailto:"><i class="fa fa-envelope-o fa-lg"></i></a>
+        </div>
+      </div>
+      <div class="deviceform">
+        <h2>Send us your Feedback</h2><br>
+        <form [formGroup]=FeedbackForm>
+          <input type="text" formControlName="username" [disabled]="true" placeholder="name" required>
+          <input type="email" formControlName="email" placeholder="Email" required>
+          <input type="tel" formControlName="mobile" placeholder="Mobile Number" required>
+          <br>
+          <div>
+            <h2>Rate us: </h2>
+            <span class="fa fa-star fa-2x" style="margin-left: 7px;" [class.rate]="star1" (click)="Sub1()" aria-hidden="true"></span>
+            <span class="fa fa-star fa-2x" style="margin-left: 7px;" [class.rate]="star2" (click)="Sub2()" aria-hidden="true"></span>
+            <span class="fa fa-star fa-2x" style="margin-left: 7px;" [class.rate]="star3" (click)="Sub3()" aria-hidden="true"></span>
+            <span class="fa fa-star fa-2x" style="margin-left: 7px;" [class.rate]="star4" (click)="Sub4()" aria-hidden="true"></span>
+            <span class="fa fa-star fa-2x" style="margin-left: 7px;" [class.rate]="star5" (click)="Sub5()" aria-hidden="true"></span>
+          </div>
+          <br>
+          <input matInput style="width: 80%; height: 50px;" type="text" formControlName="comment" placeholder="Comment"
+            required>
+        </form>
+        <button mat-button class="submitbutton" [disabled]="FeedbackForm.invalid" (click)="Submit()">Submit</button>
+      </div>
+      <hr>
+      <h1 style="margin-top: 15px;">Feedbacks</h1>
+      <div *ngFor="let feedback of feedbacks">
+        <mat-card class="bor">
+          <mat-card-header>
+            <div>
+              <mat-card-title>
+                <p style="float: left;">{{feedback.username}}</p>
+                <p style="float: right; position: absolute; right: 5%;"><small>Rating: {{feedback.rating}}</small></p>
+              </mat-card-title>
+            </div>
+          </mat-card-header>
+          <mat-card-content>
+            <p style="margin-left:30px;"> {{feedback.comment}}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+    <br>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<app-header></app-header>
+<div>
+    <div *ngIf="!deviceXs">
+        <div class="menu">
+            <div class="view">
+                <mat-card *ngFor="let product of order" class="card">
+                    <div class="display">
+                        <div style="text-align: center; font-size: 20px;">{{product.productname}}</div>
+                        <br>
+                        <img src={{product.image}} alt={{product.image}}>
+                        <br>
+                        <h4>Price: <b>{{product.quantity}}&nbsp;*&nbsp;{{product.price}}</b></h4>
+                        <h4><b>= {{product.quantity*product.price}}</b></h4>
+                        <div style="margin-top: 15px;">
+                            <button mat-raised-button class="but2" (click)="Cacel(product)">Cancel Order</button>
+                        </div>
+                    </div>
+                    <br>
+                    <h2 style="position: absolute; left: 2%; bottom: 3%;">Order Status:<small>&nbsp;{{product.progress}}%</small></h2>
+                    <mat-progress-bar
+                        class="example-margin"
+                        color="primary"
+                        mode="determinate"
+                        value={{product.progress}}>
+                    </mat-progress-bar>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="deviceXs" style="margin-top: 50px;">
+        <div class="deviceview">
+            <mat-card *ngFor="let product of order" class="devicecard">
+                <div class="devicedisplay">
+                    <div style="text-align: center; font-size: 20px;">{{product.productname}}</div>
+                    <br>
+                    <img src={{product.image}} alt={{product.image}}>
+                    <br>
+                    <h4>Price: <b>{{product.quantity}}&nbsp;*&nbsp;{{product.price}}</b></h4>
+                    <h4><b>= {{product.quantity*product.price}}</b></h4>
+                    <br>
+                    <button mat-raised-button class="but2" (click)="Cacel(product)">Cancel Order</button>
+                </div>
+                <h2 style="position: absolute; left: 2%; bottom: 3%;">Order Status:<small>&nbsp;{{product.progress}}%</small></h2>
+                <mat-progress-bar
+                    class="example-margin"
+                    color="primary"
+                    mode="determinate"
+                    value={{product.progress}}>
+                </mat-progress-bar>
+            </mat-card>
+        </div>
+    </div>
+    <div *ngIf="len" style="height: 418px;">
+        <h1 style="margin: 50px; text-align: center;">List Was Empty</h1>
+    </div>
+</div>
+<app-footer></app-footer>

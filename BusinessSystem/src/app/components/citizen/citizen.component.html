@@ -1,0 +1,93 @@
+<app-header *ngIf="!invalidpage"></app-header>
+<div *ngIf="invalidpage">
+    <img class="forbidden" src="../../../assets/error.png">
+</div>
+<div class="citizenview" *ngIf="!invalidpage">
+    <div *ngIf="!deviceXs">
+        <div class="top-view">
+            <img class="main" src="../../../assets/image.png">
+            <div class="content">
+                <img class="image-top" src="../../../assets/citizentop.png">
+            </div>
+            <h1 class="first">Citizens</h1>
+            <div class="list">
+                <ul>
+                    <li>Buy Fruits And Vegetables</li>
+                    <li>Buy Aquaculture Products</li>
+                </ul>
+            </div>
+        </div>
+        <div class="view">
+            <mat-card class="card">
+                <div class="leftview">
+                    <h2>Buy Fruits And Vegetables</h2>
+                    <p>Fruits and vegetables play an important part of your daily diet. They are naturally good, provide important 
+                        vitamins and minerals. They should be consumed daily in good proportions to maintain a healthy life. But 
+                        visiting markets every now and then can be a little difficult especially in today’s fast-moving world. There 
+                        comes a need of a reliable online supermarket where you can find varieties of fruits and vegetable that are 
+                        fresh as well as healthy. Here you can buy that...
+                    </p>
+                </div>
+                <div class="rightview">
+                    <img class ="imageview" alt="loan" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTT5blSCRG0tCTLzAPnbVIOW0W0t2n1JL-Xlw&usqp=CAU">
+                </div>
+                <button mat-button class="but"><a routerLink="/buyagriproduct" routerActiveLink="active">Buy Products</a></button>
+            </mat-card>
+            <mat-card class="card">
+                <div class="leftview">
+                    <h2>Buy Aquaculture Products</h2>
+                    <p>
+                        Here you can able to Buy the Aquaculture products like Fishes, prawns, crabs and etc.. to eat and aquaculture 
+                        beings to keep in your aquarium and soon.
+                    </p>
+                </div>
+                <div class="rightview">
+                    <img class ="imageview" alt="loan" src="https://www.fiji.gov.fj/getattachment/c227a30b-fa13-4efa-8043-52775529aaaf/NADELEI-VILLAGES-RAISE-$13,-000-FROM-TILAPIA-HARVE.aspx?width=450">
+                </div>
+                <button mat-button class="but"><a routerLink="/buyaquaproduct" routerActiveLink="active">Buy Products</a></button>
+            </mat-card>
+        </div>
+    </div>
+    <div *ngIf="deviceXs">
+        <div class="devicetop">
+            <h1 class="deviceheading">Citizens</h1>
+            <div class="devicelist">
+                <ul>
+                    <li>Buy Fruits And Vegetables</li>
+                    <li>Buy Aquaculture products</li>
+                </ul>
+            </div>
+        </div>
+        <div class="devicecontent">
+            <mat-card class="devicecard">
+                <div>
+                    <h2>Buy fruits And Vegetables</h2>
+                    <p>Fruits and vegetables play an important part of your daily diet. They are naturally good, provide important 
+                        vitamins and minerals. They should be consumed daily in good proportions to maintain a healthy life. But 
+                        visiting markets every now and then can be a little difficult especially in today’s fast-moving world. There 
+                        comes a need of a reliable online supermarket where you can find varieties of fruits and vegetable that are 
+                        fresh as well as healthy. Here you can buy that... 
+                    </p>
+                </div>
+                <div>
+                    <img class="devicecardimage" alt="loan" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTT5blSCRG0tCTLzAPnbVIOW0W0t2n1JL-Xlw&usqp=CAU">
+                </div>
+                <button mat-button class="devicecardbut"><a routerLink="/buyagriproduct" routerActiveLink="active">Buy Products</a></button>
+            </mat-card>
+            <mat-card class="devicecard">
+                <div>
+                    <h2>Buy Aquaculture Products</h2>
+                    <p>
+                        Here you can able to Buy the Aquaculture products like Fishes, prawns, crabs and etc.. to eat and aquaculture 
+                        beings to keep in your aquarium and soon.
+                    </p>
+                </div>
+                <div>
+                    <img class="devicecardimage" alt="loan" src="https://www.fiji.gov.fj/getattachment/c227a30b-fa13-4efa-8043-52775529aaaf/NADELEI-VILLAGES-RAISE-$13,-000-FROM-TILAPIA-HARVE.aspx?width=450">
+                </div>
+                <button mat-button class="devicecardbut"><a routerLink="/buyaquaproduct" routerActiveLink="active">Buy Products</a></button>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<app-footer *ngIf="!invalidpage"></app-footer>

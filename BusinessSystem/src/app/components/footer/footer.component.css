@@ -1,0 +1,97 @@
+.footer
+{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.view
+{
+    background-color: rgb(221, 224, 221);
+    height: 270px;
+}
+
+.leftview
+{
+    position: absolute;
+    margin: 30px;
+    margin-left: 200px;
+}
+
+.displayleft
+{
+    display: inline-flex;
+}
+
+button
+{
+    display: block;
+    margin: 20px;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+.leftright
+{
+    position: absolute;
+    left: 175%;
+}
+
+.middleview
+{
+    position: absolute;
+    margin: 50px;
+    left: 45%;
+}
+
+
+.rightview
+{
+    position: absolute;
+    left: 70%;
+    margin: 30px;
+    margin-left: -75px;
+    margin-right: 250px;
+}
+
+i
+{
+    margin-right: 3px;
+}
+
+.inlinebut
+{
+    display: inline-flex;
+}
+
+.devicebutton
+{
+    display: inline-flex;
+    margin: 5px;
+}
+
+.deviceleftview
+{
+    position: absolute;
+    left: 5%;
+}
+
+.devicerightview
+{
+    position: absolute;
+    left: 60%;
+}
+
+.devicedown
+{
+    margin: 15px;
+}
+
+.deviceview
+{
+    background-color: rgb(221, 224, 221);
+    height: 300px;
+}

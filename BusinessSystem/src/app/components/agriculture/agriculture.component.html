@@ -1,0 +1,157 @@
+<app-header *ngIf="!invalidpage"></app-header>
+<div *ngIf="invalidpage">
+    <img class="forbidden" src="../../../assets/error.png">
+</div>
+<div class="agriview" *ngIf="!invalidpage">
+    <div *ngIf="!deviceXs">
+        <div class="top-view">
+            <img class="main" src="../../../assets/image.png">
+            <div class="content">
+                <img class="image-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTEW7I_CEEJv67Hllzm1eQ06A5xgkcjzr4JFA&usqp=CAU">
+            </div>
+            <h1 class="first">Agriculture System</h1>
+            <div class="list">
+                <ul>
+                    <li>Sell The goods</li>
+                    <li>Water supply</li>
+                    <li>Transporting the goods</li>
+                    <li>Buy Requirements</li>
+                </ul>
+            </div>
+        </div>
+        <div class="view">
+            <mat-card class="card">
+                <div class="leftview">
+                    <h2>Sell The Goods</h2>
+                    <p>One of the biggest factors in your farmers market success is the actual market. You need to find one that fits with 
+                        what you want to accomplish. And the best way to make that determination is to go and see for yourself. Here you can 
+                        able to sell your goods at your preferred price. 
+                    </p>
+                </div>
+                <div class="rightview">
+                    <img class ="imageview" alt="loan" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRyYOu0UbrZ6GTCDzldv-_IKhRWjTIYO0oPcg&usqp=CAU">
+                </div>
+                <button mat-button class="but"><a routerLink="/sellagriproduct" routerActiveLink="active">Sell products</a></button>
+            </mat-card>
+            <mat-card class="card">
+                <div class="leftview">
+                    <h2>Need Water Supply</h2>
+                    <p>Water is a major factor in successful production of greenhouse plants. An adequate water supply is needed for 
+                        irrigation, pesticide application, evaporative cooling (if applicable), growing media preparation and clean-up. 
+                        Plants require an adequate supply of moisture for optimum growth which is affected by many variables. The design 
+                        for the water supply needs to be made for the peak use time of the year. Here we provide a water for the farm with 
+                        less money. 
+                    </p>
+                </div>
+                <div class="rightview">
+                    <img class ="imageview" alt="loan" src="../../../assets/watersupply.png">
+                </div>
+                <button mat-button class="but"><a routerLink="/watersupply" routerActiveLink="active">Water Supply</a></button>
+            </mat-card>
+            <mat-card class="card">
+                <div class="leftview">
+                    <h2>Transporting The Goods</h2>
+                    <p>Transport is a farm practice common to every farmer.After all, every harvested crop needs to be transported, either 
+                        directly from the field to the market, or to the packing house and storage. Properly managed transport is efficient 
+                        in delivering farm resources and harvested crops as fast as possible. When considered as the final practice of delivering 
+                        the crops to the market, transport is responsible for the preservation of crop yield and quality. Besides that, when 
+                        it's economically managed, transport will give plenty of space for reducing total production cost.
+                    </p>
+                </div>
+                <div class="rightview">
+                    <img class ="imageview" alt="loan" src="../../../assets/foodtransport.png">
+                </div>
+                <button mat-button class="but"><a routerLink="/agritransport" routerActiveLink="active">Transport</a></button>
+            </mat-card>
+            <mat-card class="card">
+                <div class="leftview">
+                    <h2>Buy Requirements</h2>
+                    <p>Use pesticides to control insects, bugs and rodents in and around your home, lawn and garden. At Agri Supply ®, 
+                        we carry a wide variety of pesticides to control, eliminate, and prevent pests inside and outside of your home. 
+                        We also carry a wide range of herbicides to rid your lawn and garden of unwanted weeds. We carry a wide selection
+                         of pesticides to address insects, fire ants and more. We also have a wide variety of sprayers and 
+                         spreaders to assist you in proper pesticide application. Here you can buy each and every tools used for farming.
+                    </p>
+                </div>
+                <div class="rightview">
+                    <img class ="imageview" alt="loan" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQPyqSAmvtob5WAoh81jGQmszfs6i2c3WX4Bg&usqp=CAU">
+                </div>
+                <button mat-button class="but"><a routerLink="/agricommerce" routerActiveLink="active">Get Products</a></button>
+            </mat-card>
+        </div>
+    </div>
+    <div *ngIf="deviceXs">
+        <div class="devicetop">
+            <h1 class="deviceheading">Agriculture System</h1>
+            <div class="devicelist">
+                <ul>
+                    <li>Sell The goods</li>
+                    <li>Water supply</li>
+                    <li>Transporting the goods</li>
+                    <li>Buy Requirements</li>
+                </ul>
+            </div>
+        </div>
+        <div class="devicecontent">
+            <mat-card class="devicecard">
+                <div>
+                    <h2>Sell The Goods</h2>
+                    <p>One of the biggest factors in your farmers market success is the actual market. You need to find one that fits with 
+                        what you want to accomplish. And the best way to make that determination is to go and see for yourself. Here you can 
+                        able to sell your goods at your preferred price. 
+                    </p>
+                </div>
+                <div>
+                    <img class="devicecardimage" alt="loan" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRyYOu0UbrZ6GTCDzldv-_IKhRWjTIYO0oPcg&usqp=CAU">
+                </div>
+                <button mat-button class="devicecardbut"><a routerLink="/sellagriproduct" routerActiveLink="active">Sell Products</a></button>
+            </mat-card>
+            <mat-card class="devicecard">
+                <div>
+                    <h2>Need Water Supply</h2>
+                    <p>Water is a major factor in successful production of greenhouse plants. An adequate water supply is needed for 
+                        irrigation, pesticide application, evaporative cooling (if applicable), growing media preparation and clean-up. 
+                        Plants require an adequate supply of moisture for optimum growth which is affected by many variables. The design 
+                        for the water supply needs to be made for the peak use time of the year. Here we provide a water for the farm with 
+                        less money. 
+                    </p>
+                </div>
+                <div>
+                    <img class="devicecardimage" alt="loan" src="../../../assets/watersupply.png">
+                </div>
+                <button mat-button class="devicecardbut"><a routerLink="/watersupply" routerActiveLink="active">Water Supply</a></button>
+            </mat-card>
+            <mat-card class="devicecard">
+                <div>
+                    <h2>Transporting The Goods</h2>
+                    <p>Transport is a farm practice common to every farmer.After all, every harvested crop needs to be transported, either 
+                        directly from the field to the market, or to the packing house and storage. Properly managed transport is efficient 
+                        in delivering farm resources and harvested crops as fast as possible. When considered as the final practice of delivering 
+                        the crops to the market, transport is responsible for the preservation of crop yield and quality. Besides that, when 
+                        it's economically managed, transport will give plenty of space for reducing total production cost.
+                    </p>
+                </div>
+                <div>
+                    <img class="devicecardimage" alt="loan" src="../../../assets/foodtransport.png">
+                </div>
+                <button mat-button class="devicecardbut"><a routerLink="/agritransport" routerActiveLink="active">Transport</a></button>
+            </mat-card>
+            <mat-card class="devicecard">
+                <div>
+                    <h2>Buy Requirements</h2>
+                    <p>Use pesticides to control insects, bugs and rodents in and around your home, lawn and garden. At Agri Supply ®, 
+                        we carry a wide variety of pesticides to control, eliminate, and prevent pests inside and outside of your home. 
+                        We also carry a wide range of herbicides to rid your lawn and garden of unwanted weeds. We carry a wide selection
+                         of pesticides to address insects, fire ants and more. We also have a wide variety of sprayers and 
+                         spreaders to assist you in proper pesticide application. Here you can buy each and every tools used for farming.
+                    </p>
+                </div>
+                <div>
+                    <img class="devicecardimage" alt="loan" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQPyqSAmvtob5WAoh81jGQmszfs6i2c3WX4Bg&usqp=CAU">
+                </div>
+                <button mat-button class="devicecardbut"><a routerLink="/agricommerce" routerActiveLink="active">Get Products</a></button>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<app-footer *ngIf="!invalidpage"></app-footer>

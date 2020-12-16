@@ -1,0 +1,35 @@
+<app-header *ngIf="!invalidpage"></app-header>
+<div *ngIf="invalidpage">
+    <img class="forbidden" src="../../../assets/error.png">
+</div>
+<div class="waterview" *ngIf="!invalidpage">
+    <div class="view">
+        <h2>Cost of water supply for 1 Acre: 24,999/-</h2>
+        <div>
+            <label>User name : </label>
+            <input type="text" [disabled]="true" [(ngModel)]="username">
+        </div>
+        <div>
+            <label>Mobile Number : </label>
+            <input type="tel" [(ngModel)]="mobile" required>
+        </div>
+        <div>
+            <label>Crop type : </label>
+            <input type="text" [(ngModel)]="crop" required>
+        </div>
+        <div>
+            <label>Size of the field(in acres) : </label>
+            <input type="number" [(ngModel)]="acres" (blur)="onBlurMethod()" required>
+        </div>
+        <div>
+            <label>Address : </label>
+            <input type="text" [(ngModel)]="address" required>
+        </div>
+        <div *ngIf="price">
+            <h3>Pay: {{price}}</h3>
+        </div>
+        <div>
+            <button mat-button (click)="Submit()">Submit</button>
+        </div>
+    </div>
+</div>

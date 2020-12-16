@@ -1,0 +1,355 @@
+<mat-tab-group mat-align-tabs="start">
+    <mat-tab label="Dashboard">
+        <div *ngIf="!deviceXs">
+            <div id="login" style="height: 370px; width: 60%; margin-top: 50px; margin-left: 20%; margin-bottom: 50px;"></div>
+            <br>
+            <div id="Signup" style="height: 370px; width: 60%; margin-top: 50px; margin-left: 20%; margin-bottom: 50px;"></div>
+            <br>
+            <div id="Orders" style="height: 370px; width: 60%; margin-top: 50px; margin-left: 20%; margin-bottom: 50px;"></div>
+            <br>
+            <div id="LoginSignupOrders" style="height: 370px; width: 60%; margin-top: 50px; margin-left: 20%; margin-bottom: 50px;"></div>
+            <div style="margin-top: 75px;">
+                <table class="admin">
+                    <tr>
+                        <th>Agriculture</th>
+                        <td>{{agriculturelist.length}}</td>
+                    </tr>
+                    <tr>
+                        <th>Aquaculture</th>
+                        <td>{{aquaculturelist.length}}</td>
+                    </tr>
+                    <tr>
+                        <th>Citizen</th>
+                        <td>{{citizenlist.length}}</td>
+                    </tr>
+                    <tr>
+                        <th>waterRequests</th>
+                        <td>{{waterRequests.length}}</td>
+                    </tr>
+                    <tr>
+                        <th>AgriRequirement</th>
+                        <td>{{AgriRequirement.length}}</td>
+                    </tr>
+                    <tr>
+                        <th>AquaRequirement</th>
+                        <td>{{AquaRequirement.length}}</td>
+                    </tr>
+                    <tr>
+                        <th>AgriSells</th>
+                        <td>{{AgriSells.length}}</td>
+                    </tr>
+                    <tr>
+                        <th>AquaSells</th>
+                        <td>{{AquaSells.length}}</td>
+                    </tr>
+                    <tr>
+                        <th>AgriTransport</th>
+                        <td>{{AgriTransport.length}}</td>
+                    </tr>
+                    <tr>
+                        <th>AquaTransport</th>
+                        <td>{{AquaTransport.length}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div *ngIf="deviceXs">
+            <div id="login" style="height: 370px; width: 85%; margin-top: 50px; margin-bottom: 50px;margin-left: 15px;"></div>
+            <br>
+            <div id="Signup" style="height: 370px; width: 85%; margin-top: 50px; margin-bottom: 50px;margin-left: 15px;"></div>
+            <br>
+            <div id="Orders" style="height: 370px; width: 85%; margin-top: 50px; margin-bottom: 50px;margin-left: 15px;"></div>
+            <br>
+            <div id="LoginSignupOrders" style="height: 370px; width: 85%; margin-top: 50px; margin-bottom: 50px;margin-left: 15px;"></div>
+            <div style="margin-top: 50px;">
+                <table class="deviceadmin">
+                    <tr>
+                        <th>Agriculture</th>
+                        <td>{{agriculturelist.length}}</td>
+                    </tr>
+                    <tr>
+                        <th>Aquaculture</th>
+                        <td>{{aquaculturelist.length}}</td>
+                    </tr>
+                    <tr>
+                        <th>Citizen</th>
+                        <td>{{citizenlist.length}}</td>
+                    </tr>
+                    <tr>
+                        <th>waterRequests</th>
+                        <td>{{waterRequests.length}}</td>
+                    </tr>
+                    <tr>
+                        <th>AgriRequirement</th>
+                        <td>{{AgriRequirement.length}}</td>
+                    </tr>
+                    <tr>
+                        <th>AquaRequirement</th>
+                        <td>{{AquaRequirement.length}}</td>
+                    </tr>
+                    <tr>
+                        <th>AgriSells</th>
+                        <td>{{AgriSells.length}}</td>
+                    </tr>
+                    <tr>
+                        <th>AquaSells</th>
+                        <td>{{AquaSells.length}}</td>
+                    </tr>
+                    <tr>
+                        <th>AgriTransport</th>
+                        <td>{{AgriTransport.length}}</td>
+                    </tr>
+                    <tr>
+                        <th>AquaTransport</th>
+                        <td>{{AquaTransport.length}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Todo">
+        <div *ngIf="!deviceXs">
+            <div *ngIf="orders">
+                <h1 style="font-size: 30px; text-align: center;margin-top: 20px;">New Orders</h1>
+                <div class="menu">
+                    <div class="view">
+                        <mat-card *ngFor="let order of orders" class="card">
+                            <div class="display">
+                                <div style="text-align: center; font-size: 20px;">{{order.productname}}</div><br>
+                                <div>
+                                    <label>
+                                        Name: {{order.username}}<br>
+                                        email: {{order.email}}
+                                    </label>
+                                </div>
+                                <div style="text-align: center; font-size: 20px;">{{order.ordername}}</div>
+                                <br>
+                                <img src={{order.image}} alt={{order.image}}>
+                                <br>
+                                <h4>Price: <b>{{order.price}}</b></h4>
+                                <br>
+                                <label>Quantity : </label>
+                                <input type="number" [(ngModel)]="order.quantity" [disabled]="true" required>
+                                <br>
+                                <label style="position: absolute;left: 12%;margin-top: 15px;">Progress : </label>
+                                <mat-slider thumbLabel tickInterval="200" min=0 max=100 step=20 [(ngModel)]="order.progress"
+                                    min="1" max="100" color="primary" style="width: 90%; margin-top: 20px;">
+                                </mat-slider>
+                                <br>
+                                <div style="margin-top: 15px;margin-bottom: 15px;">
+                                    <button mat-raised-button class="cancel" (click)="CancelOrder(order)">CancelOrder</button>
+                                    <button mat-raised-button class="but" (click)="EditOrderProgress(order)">Edit</button>
+                                </div>
+                            </div>
+                        </mat-card>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="!orders">
+                <h1 style="font-size: 30px; text-align: center;">New Orders</h1>
+                <h2 style="margin: 50px; text-align: center; font-size: 25px;">
+                    Orders List was Empty
+                </h2>
+            </div>
+            <hr>
+            <div *ngIf="feedback">
+                <h1 style="font-size: 30px; text-align: center;">Feedbacks</h1>
+                <div *ngFor="let feed of feedback" style="display: inline-flex;margin-left: 30px;">
+                    <mat-card class="displayfeedback">
+                        <mat-card-header>
+                            <div>
+                                <mat-card-title>
+                                    <p style="float: left;">{{feed.username}}</p>
+                                    <p style="float: right; position: absolute; right: 5%;"><small>Rating:
+                                            {{feed.rating}}</small></p>
+                                </mat-card-title>
+                            </div>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <p style="margin-left:30px;"> {{feed.comment}}</p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button style="margin-left: 4vh;" mat-icon-button color="warn"
+                                aria-label="Example icon button with a heart icon">
+                                <mat-icon>favorite</mat-icon>
+                            </button>
+                        </mat-card-actions>
+                    </mat-card>
+                </div>
+            </div>
+            <div *ngIf="!feedback">
+                <h1 style="font-size: 30px; text-align: center;">Feedbacks</h1>
+                <h2 style="margin: 50px; text-align: center; font-size: 25px;">
+                    Feedback List was Empty
+                </h2>
+            </div>
+            <hr>
+            <div>
+                <h1 style="font-size: 30px; text-align: center;margin-top: 20px;">Add Requirement for Agriculture</h1>
+                <div style="margin-top: 50px; margin-bottom: 20px;">
+                    <form [formGroup]="AgriReq">
+                        <div class="viewcon">
+                            <label>ProductName: </label><br>
+                            <input class="inputagri" type="text" formControlName="productname" required>
+                        </div>
+                        <div class="viewcon">
+                            <label>Image: </label><br>
+                            <input class="inputagri" type="text" formControlName="image" required>
+                        </div>
+                        <div class="viewcon">
+                            <label>Price: </label><br>
+                            <input class="inputagri" type="number" formControlName="price" required>
+                        </div>
+                        <div>
+                            <button mat-button (click)="AddAgriRequirement()" style="left: 50%;background-color: green; color: #fff;">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <div>
+                <h1 style="font-size: 30px; text-align: center;">Add Requirement for Aquaculture</h1>
+                <div style="margin-top: 50px; margin-bottom: 20px;">
+                    <form [formGroup]="AquaReq">
+                        <div class="viewcon">
+                            <label>ProductName: </label><br>
+                            <input class="inputaqua" type="text" formControlName="productname" required>
+                        </div>
+                        <div class="viewcon">
+                            <label>Image: </label><br>
+                            <input class="inputaqua" type="text" formControlName="image" required>
+                        </div>
+                        <div class="viewcon">
+                            <label>Price: </label><br>
+                            <input class="inputaqua" type="number" formControlName="price" required>
+                        </div>
+                        <div>
+                            <button mat-button (click)="AddAquaRequirement()" style="left: 50%;background-color: green; color: #fff;">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="deviceXs">
+            <div>
+                <h1 style="text-align: center;margin-top: 20px;">New Orders</h1>
+                <div class="deviceview">
+                    <mat-card *ngFor="let order of orders" class="devicecard">
+                        <div class="devicedisplay">
+                            <div style="text-align: center; font-size: 10px;"><b>{{order.productname}}</b></div>
+                            <label style="font-size: 10px;">
+                                Name: {{order.username}}<br>
+                                email: {{order.email}}
+                            </label>
+                            <br>
+                            <img class="deviceimage" src={{order.image}} alt={{order.image}}>
+                            <br>
+                            <h4>Price: <b>{{order.price}}</b></h4>
+                            <label>Quantity : </label>
+                            <input type="number" style="width: 50%;" [(ngModel)]="order.quantity" [disabled]="true" required>
+                            <br>
+                            <label style="position: absolute;left: 12%;margin-top: 15px;">Progress : </label>
+                            <mat-slider thumbLabel tickInterval="200" min=0 max=100 step=20 [(ngModel)]="order.progress"
+                                min="1" max="100" color="primary" style="width: 90%; margin-top: 20px;">
+                            </mat-slider>
+                            <br>
+                            <div style="margin-left: -3px;">
+                                <button mat-button class="devicebut1" (click)="CancelOrder(order)">Cancel</button>
+                                <button mat-button class="devicebut2" (click)="EditOrderProgress(order)">Edit</button>
+                            </div>
+                        </div>
+                    </mat-card>
+                </div>
+            </div>
+            <hr>
+            <div>
+                <h1 style="text-align: center;margin-top: 20px;">Feedbacks</h1>
+                <div *ngFor="let feed of feedback">
+                    <mat-card class="devicefeedback">
+                        <mat-card-header>
+                            <div>
+                                <mat-card-title>
+                                    <p style="float: left;">{{feed.username}}</p>
+                                    <p style="float: right; position: absolute; right: 5%;"><small>Rating:
+                                            {{feed.rating}}</small></p>
+                                </mat-card-title>
+                            </div>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <p style="margin-left:30px;"> {{feed.comment}}</p>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+            <hr>
+            <div>
+                <h1 style="text-align: center;margin-top: 20px; font-size: 20px;">Add Requirement for Agriculture</h1>
+                <div style="margin-top: 20px; margin-bottom: 20px;margin-left: 20px;">
+                    <form [formGroup]="AgriReq">
+                        <div>
+                            <label>ProductName: </label><br>
+                            <input class="diviceagri" type="text" formControlName="productname" required>
+                        </div>
+                        <div>
+                            <label>Image: </label><br>
+                            <input class="diviceagri" type="text" formControlName="image" required>
+                        </div>
+                        <div>
+                            <label>Price: </label><br>
+                            <input class="diviceagri" type="number" formControlName="price" required>
+                        </div>
+                        <div>
+                            <button mat-button (click)="AddAgriRequirement()" style="left: 30%;background-color: green; color: #fff;">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <div>
+                <h1 style="text-align: center;margin-top: 20px;font-size: 20px;">Add Requirement for Aquaculture</h1>
+                <div style="margin-top: 20px; margin-bottom: 20px;margin-left: 20px;">
+                    <form [formGroup]="AquaReq">
+                        <div>
+                            <label>ProductName: </label><br>
+                            <input class="diviceaqua" type="text" formControlName="productname" required>
+                        </div>
+                        <div>
+                            <label>Image: </label><br>
+                            <input class="diviceaqua" type="text" formControlName="image" required>
+                        </div>
+                        <div>
+                            <label>Price: </label><br>
+                            <input class="diviceaqua" type="number" formControlName="price" required>
+                        </div>
+                        <div>
+                            <button mat-button (click)="AddAquaRequirement()" style="left: 30%;background-color: green; color: #fff;">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+  </mat-tab-group>
+<div>
+    <!-- <div *ngIf="!deviceXs">
+        <div style="margin-left: 25%;display: inline-flex; background-color: blue; color: white; width: 50%; height: 60px;margin-top: 50px;">
+            <div style="margin-left: 30%; margin-top: 10px;">
+                <button style="background-color: green;" mat-button (click)="Dashboard()">DashBoard</button>
+            </div>
+            <div style="margin-left: 100px; margin-top: 10px;">
+                <button mat-raised-button color="accent" (click)="Todo()">Todo</button>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="deviceXs">
+        <div style="display: inline-flex; background-color: blue; color: white; width: 100%; height: 100px; border-radius: 0 0 50% 50%;">
+            <div style="margin-left: 20%; margin-top: 20px;">
+                <button style="background-color: orange; color: #000;" mat-button (click)="Dashboard()">DashBoard</button>
+            </div>
+            <div style="margin-left: 50px; margin-top: 20px;">
+                <button mat-raised-button style="background-color: yellow; color: #000;" color="accent" (click)="Todo()">Todo</button>
+            </div>
+        </div>
+    </div> -->
+
+</div>

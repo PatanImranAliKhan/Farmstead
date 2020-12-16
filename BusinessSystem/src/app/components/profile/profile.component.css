@@ -1,0 +1,99 @@
+.profileview
+{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.viewbox
+{
+    position: absolute;
+    top: 20%;
+    left: 25%;
+}
+
+.singleview
+{
+    margin-bottom: 30px;
+}
+
+.view
+{
+    display: inline-flex;
+}
+
+
+.inputview
+{
+    width: 500px;
+    height: 30px;
+    margin-right: 50px;
+}
+
+.submit
+{
+    margin-left: 200px;
+    background-color: rgb(9, 179, 23);
+    color: #fff;
+}
+
+input
+{
+    width: 150%;
+    height: 30px;
+}
+
+label
+{
+    font-size: 20px;
+}
+
+h3
+{
+    margin-top: 5px;
+}
+
+.special
+{
+    margin-left: 50px;
+}
+
+.passinput
+{
+    margin-left: 50px;
+    width: 250px;
+}
+
+.deviceview
+{
+    margin: 30px;
+}
+
+.deviceinputview
+{
+    width: 100%;
+}
+
+.devicepassinput
+{
+    width: 100%;
+}
+
+.devicespecial
+{
+    margin-bottom: -30px;
+}
+
+.deviceinputview-2
+{
+
+    width: 220px;
+}
+
+.devicesubmit
+{
+    margin-top: 30px;
+    margin-left: 150px;
+    background-color: rgb(9, 179, 23);
+    color: #fff;
+}

@@ -1,0 +1,60 @@
+<app-header *ngIf="!invalidpage"></app-header>
+<div *ngIf="invalidpage">
+    <img class="forbidden" src="../../../assets/error.png">
+</div>
+<div class="sellviewmain" *ngIf="!invalidpage">
+    <div *ngIf="!deviceXs">
+        <div class="viewcontent">
+            <div class="singleview">
+                <label class="labelview">Username : </label><br>
+                <input type="text" [(ngModel)]="username" [disabled]="true" required>
+            </div>
+            <div class="singleview">
+                <label class="labelview">Product Name: </label><br>
+                <input type="text" [(ngModel)]="productname" placeholder="product name" required> 
+            </div>
+            <div class="singleview">
+                <label class="labelview">Price : </label><br>
+                <input type="number" [(ngModel)]="price" placeholder="price to be sold per KG/Dozen" required>
+            </div>
+            <div class="singleview">
+                <label class="labelview">Image: </label><br>
+                <input type="text" [(ngModel)]="image" placeholder="Enter the image url" required>
+            </div>
+            <div class="singleview">
+                <label class="labelview">Address : </label><br>
+                <input type="text" [(ngModel)]="address" placeholder="Enter the address to be visited by you and customer" required>
+            </div>
+            <div>
+                <button mat-button (click)="submit()">Submit</button>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="deviceXs">
+        <div class="deviceview">
+            <div class="singleview">
+                <label class="labelview">Username : </label><br>
+                <input type="text" class="deviceinput" [(ngModel)]="username" [disabled]="true" required>
+            </div>
+            <div class="singleview">
+                <label class="labelview">Product Name: </label><br>
+                <input type="text" class="deviceinput" [(ngModel)]="productname" placeholder="product name" required> 
+            </div>
+            <div class="singleview">
+                <label class="labelview">Price : </label><br>
+                <input type="number" class="deviceinput" [(ngModel)]="price" placeholder="price to be sold per KG/Dozen" required>
+            </div>
+            <div class="singleview">
+                <label class="labelview">Image: </label><br>
+                <input type="text" class="deviceinput" [(ngModel)]="image" placeholder="Enter the image url" required>
+            </div>
+            <div class="singleview">
+                <label class="labelview">Address : </label><br>
+                <input type="text" class="deviceinput" [(ngModel)]="address" placeholder="Enter the address to be visited by you and customer" required>
+            </div>
+            <div>
+                <button mat-button class="devicebutton" (click)="submit()">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>

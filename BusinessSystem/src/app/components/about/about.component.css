@@ -1,0 +1,30 @@
+.mainview
+{
+    margin: 0;
+    padding: 0;
+}
+
+.total
+{
+    display: inline-flex;
+    margin: 30px;
+}
+
+
+img
+{
+    width: 75px;
+    height: 75px;
+}
+
+.imageleft
+{
+    margin-left: 50px;
+}
+
+.textview
+{
+    font-size: 22px;
+    line-height: 150%;
+    margin-bottom: 30px;
+}

@@ -1,0 +1,87 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row fxLayoutAlign="space-between center">
+      <div fxLayout="row">
+        <button mat-button>
+          <mat-icon><img src="../../../assets/Logo.png" alt="logo"></mat-icon>
+          <span class="logo">FARMSTEAD </span>
+        </button>
+        <div *ngIf="!deviceXs" fxLayout="row">
+          <button mat-button><a routerLink="/home" routerActiveLink="active">Home</a></button>
+          <button mat-button><a routerLink="/about" routerActiveLink="active">About us</a></button>
+          <button mat-button><a routerLink="/contact" routerActiveLink="active">Contact us</a></button>
+        </div>
+      </div>
+      <div fxLayout="row space-between" *ngIf="!present">
+        <div>
+            <button *ngIf="deviceXs" mat-icon-button [matMenuTriggerFor]="logsign">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+        </div>
+        <div>
+            <button
+                *ngIf="!deviceXs"
+                mat-button
+                [matMenuTriggerFor]="login"
+                fxLayoutAlign="end">
+                Login
+            </button>
+        </div>
+        <div>
+            <button
+                *ngIf="!deviceXs"
+                mat-button
+                [matMenuTriggerFor]="signin"
+                fxLayoutAlign="end">
+                Signin
+            </button>
+        </div>
+      </div>
+      <div *ngIf="present">
+        <div *ngIf="!deviceXs">
+          <button mat-button class="Cart" style="background-color: rgb(22, 11, 121);margin-right: 30px;"><a routerLink="/cart" routerActiveLink="active"> <i class="fa fa-cart-arrow-down" aria-hidden="true" style="color: #fff; margin-right: 10px;"></i>My Cart</a></button>
+          <button mat-button class="Cart" style="background-color: rgb(22, 11, 121);margin-right: 30px;"><a routerLink="/order" routerActiveLink="active"> <i class="fa fa-cart-arrow-down" aria-hidden="true" style="color: #fff; margin-right: 10px;"></i>My Orders</a></button>
+          <button mat-button><a routerLink="/profile" routerActiveLink="active">My Account</a></button>
+          <button mat-button><a routerLink="/home" (click)="logout()" routerActiveLink="active">Log Out</a></button>
+        </div>
+        <div *ngIf="deviceXs">
+          <button mat-icon-button [matMenuTriggerFor]="cart">
+            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+          </button>
+          <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-toolbar-row>
+    <mat-toolbar-row *ngIf="deviceXs" fxLayoutAlign="space-between end">
+      <button mat-button><a routerLink="/home" routerActiveLink="active">Home</a></button>
+      <button mat-button><a routerLink="/about" routerActiveLink="active">About us</a></button>
+      <button mat-button><a routerLink="/contact" routerActiveLink="active">Contact us</a></button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <!-- Menu Items -->
+
+<mat-menu #logsign="matMenu" fxLayoutAlignin="end">
+    <button mat-menu-item [matMenuTriggerFor]="login">Login</button>
+    <button mat-menu-item [matMenuTriggerFor]="signin">Signin</button>
+</mat-menu>
+<mat-menu #login="matMenu" fxLayoutAlign="end">
+    <button mat-menu-item><a class="anchor" routerLink="/login/agriculture" routerActiveLink="active">Agriculture</a></button>
+    <button mat-menu-item><a class="anchor" routerLink="/login/aquaculture" routerActiveLink="active">Aquaculture</a></button>
+    <button mat-menu-item><a class="anchor" routerLink="/login/citizen" routerActiveLink="active">Citizen</a></button>
+</mat-menu>
+<mat-menu #signin="matMenu" fxLayoutAlign="end">
+  <button mat-menu-item><a class="anchor" routerLink="/signin/agriculture" routerActiveLink="active">Agriculture</a></button>
+  <button mat-menu-item><a class="anchor" routerLink="/signin/aquaculture" routerActiveLink="active">Aquaculture</a></button>
+  <button mat-menu-item><a class="anchor" routerLink="/signin/citizen" routerActiveLink="active">Citizen</a></button>
+</mat-menu>
+
+<mat-menu #menu="matMenu" fxLayoutAlign="end">
+  <button mat-menu-item><a class="anchor" routerLink="/profile" routerActiveLink="active">My Account</a></button>
+  <button mat-menu-item><a class="anchor" (click)="logout()">Log Out</a></button>
+</mat-menu>
+
+<mat-menu #cart="matMenu" fxLayoutAlign="end">
+  <button mat-menu-item><a class="anchor" routerLink="/cart" routerActiveLink="active">Cart</a></button>
+  <button mat-menu-item><a class="anchor" routerLink="/order" routerActiveLink="active">Orders</a></button>
+</mat-menu>

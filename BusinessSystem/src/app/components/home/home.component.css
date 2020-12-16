@@ -1,0 +1,67 @@
+.maintop
+{
+    margin: 0;
+    padding: 0;
+}
+
+.leftview
+{
+    width: 40%;
+    margin-left: 5%;
+    margin-right: 3%;
+    font-size: 18px;
+    line-height: 160%;
+    font-family: sans-serif;
+}
+
+.rightview
+{
+    width: 40%;
+    margin-left: 50%;
+    margin-bottom: 50px;
+    font-size: 18px;
+    line-height: 150%;
+    font-family: sans-serif;
+}
+
+mat-card
+{
+    border-radius: 5px;
+}
+
+.middleview
+{
+    width: 40%;
+    margin-left: 5%;
+    margin-right: 3%;
+    font-size: 18px;
+    line-height: 160%;
+    font-family: sans-serif;
+    margin-bottom: 50px;
+}
+
+button
+{
+    width: 70px;
+    margin-left: 70px;
+}
+
+.butt
+{
+    width: 70px;
+    margin-left: 150px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.anchor{
+    text-decoration: none;
+    color: #fff;
+}
+
+.devicecard
+{
+    margin-bottom: 30px;
+}

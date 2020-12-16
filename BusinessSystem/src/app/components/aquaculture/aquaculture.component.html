@@ -1,0 +1,131 @@
+<app-header *ngIf="!invalidpage"></app-header>
+<div *ngIf="invalidpage">
+    <img class="forbidden" src="../../../assets/error.png">
+</div>
+<div class="aquaview" *ngIf="!invalidpage">
+    <div *ngIf="!deviceXs">
+        <div class="top-view">
+            <img class="main" src="../../../assets/image.png">
+            <div class="content">
+                <img class="image-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQHxKxAvQbU2jI39xgQ-vWcLk6RH2KedbjH0g&usqp=CAU">
+            </div>
+            <h1 class="first">Aquaculture System</h1>
+            <div class="list">
+                <ul>
+                    <li>Sell your goods</li>
+                    <li>Buy Requirements</li>
+                    <li>Transporting the goods</li>
+                </ul>
+            </div>
+        </div>
+        <div class="view">
+            <mat-card class="card">
+                <div class="leftview">
+                    <h2>Sell The Goods</h2>
+                    <p>Selling is a transaction where a good or service is being exchanged for money. It also refers to the process of 
+                        persuading a person or organization to buy something.If you're selling a product or service, you need to focus 
+                        your selling efforts on communicating the benefits to the buyer. Successful salespeople have several traits, 
+                        including the ability to build relationships and the ability to listen to customers. There are several sales 
+                        techniques; some should be avoided, while others focus on building mutually beneficial relationships with 
+                        customers.
+                    </p>
+                </div>
+                <div class="rightview">
+                    <img class ="imageview" alt="loan" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTD9cQijV-XafoEVTQRIm-IvG4gAQgPIqJ9Wg&usqp=CAU">
+                </div>
+                <button mat-button class="but"><a routerLink="/sellaquaproduct" routerActiveLink="active">Sell Products</a></button>
+            </mat-card>
+            <mat-card class="card">
+                <div class="leftview">
+                    <h2>Buy Requirements</h2>
+                    <p>Ponds require specific soil types and slopes, so many properties are not suited for building a pond. It’s best to
+                         consult with aquaculture experts on the viability of any property on which you’re hoping to install a pond.Existing 
+                         ponds on your property may be easy to stock with fish, but it is recommended that you still consult with local 
+                         experts to find out what the best fish stocks would be for your region, climate and even your particular pond’s ecology.
+                    </p>
+                </div>
+                <div class="rightview">
+                    <img class ="imageview" alt="loan" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQPyqSAmvtob5WAoh81jGQmszfs6i2c3WX4Bg&usqp=CAU">
+                </div>
+                <button mat-button class="but"><a routerLink="/aquacommerce" routerActiveLink="active">Get Products</a></button>
+            </mat-card>
+            <mat-card class="card">
+                <div class="leftview">
+                    <h2>Transporting Goods</h2>
+                    <p>Transport of live fish to remote markets is a more complex handling operation and requires investment in trucks 
+                        with fish holding cages, pumping systems to circulate the water, and aeration devices in the tanks. Long distance
+                        transport of fresh fish further requires ice, or trucks with cooling devices. It may not be economically feasible
+                        to transport fresh or live fish to rural markets unless economies of scale can be achieved through high-volume 
+                        transport. Live transport may only be feasible for urban centres where consumers are willing and able to pay higher prices 
+                        for quality products.
+                    </p>
+                </div>
+                <div class="rightview">
+                    <img class ="imageview" alt="loan" src="https://images.thefishsite.com/fish/articles/Equipment/trade-ship-shipping-containers.jpg?profile=article-full">
+                </div>
+                <button mat-button class="but"><a routerLink="/aquatransport" routerActiveLink="active">Transport</a></button>
+            </mat-card>
+        </div>
+    </div>
+    <div *ngIf="deviceXs">
+        <div class="devicetop">
+            <h1 class="deviceheading">Aquaculture System</h1>
+            <div class="devicelist">
+                <ul>
+                    <li>Sell your goods</li>
+                    <li>Buy Requirements</li>
+                    <li>Transporting the goods</li>
+                </ul>
+            </div>
+        </div>
+        <div class="devicecontent">
+            <mat-card class="devicecard">
+                <div>
+                    <h2>Sell your Goods</h2>
+                    <p>Selling is a transaction where a good or service is being exchanged for money. It also refers to the process of 
+                        persuading a person or organization to buy something.If you're selling a product or service, you need to focus 
+                        your selling efforts on communicating the benefits to the buyer. Successful salespeople have several traits, 
+                        including the ability to build relationships and the ability to listen to customers. There are several sales 
+                        techniques; some should be avoided, while others focus on building mutually beneficial relationships with 
+                        customers.
+                    </p>
+                </div>
+                <div>
+                    <img class="devicecardimage" alt="loan" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTD9cQijV-XafoEVTQRIm-IvG4gAQgPIqJ9Wg&usqp=CAU">
+                </div>
+                <button mat-button class="devicecardbut"><a routerLink="/sellaquaproduct" routerActiveLink="active">Sell Products</a></button>
+            </mat-card>
+            <mat-card class="devicecard">
+                <div>
+                    <h2>Buy Requirements</h2>
+                    <p>Ponds require specific soil types and slopes, so many properties are not suited for building a pond. It’s best to
+                        consult with aquaculture experts on the viability of any property on which you’re hoping to install a pond.Existing 
+                        ponds on your property may be easy to stock with fish, but it is recommended that you still consult with local 
+                        experts to find out what the best fish stocks would be for your region, climate and even your particular pond’s ecology. 
+                    </p>
+                </div>
+                <div>
+                    <img class="devicecardimage" alt="loan" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQPyqSAmvtob5WAoh81jGQmszfs6i2c3WX4Bg&usqp=CAU">
+                </div>
+                <button mat-button class="devicecardbut"><a routerLink="/aquacommerce" routerActiveLink="active">Get Products</a></button>
+            </mat-card>
+            <mat-card class="devicecard">
+                <div>
+                    <h2>Transporting The goods</h2>
+                    <p>Transport of live fish to remote markets is a more complex handling operation and requires investment in trucks 
+                        with fish holding cages, pumping systems to circulate the water, and aeration devices in the tanks. Long distance
+                        transport of fresh fish further requires ice, or trucks with cooling devices. It may not be economically feasible
+                        to transport fresh or live fish to rural markets unless economies of scale can be achieved through high-volume 
+                        transport. Live transport may only be feasible for urban centres where consumers are willing and able to pay higher prices 
+                        for quality products.
+                    </p>
+                </div>
+                <div>
+                    <img class="devicecardimage" alt="loan" src="https://images.thefishsite.com/fish/articles/Equipment/trade-ship-shipping-containers.jpg?profile=article-full">
+                </div>
+                <button mat-button class="devicecardbut"><a routerLink="/aquatransport" routerActiveLink="active">Transport</a></button>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<app-footer *ngIf="!invalidpage"></app-footer>

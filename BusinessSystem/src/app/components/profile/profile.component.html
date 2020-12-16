@@ -1,0 +1,105 @@
+<app-header></app-header>
+<div class="profileview">
+    <div *ngIf="!deviceXs">
+        <div class="viewbox">
+            <div>
+                <div class="singleview">
+                    <label>username : </label>
+                    <br>
+                    <input class="inputview" type="text" [(ngModel)]="username" [disabled]="true">
+                </div>
+                <div class="singleview">
+                    <label>Email : </label>
+                    <br>
+                    <div class="view">
+                        <input class="inputview" type="text" [(ngModel)]="email" [disabled]="disableemail">
+                        <button mat-button color="primary" (click)="editemail()">edit</button>
+                    </div>
+                </div>
+                <div class="singleview">
+                    <label>Mobile number : </label>
+                    <br>
+                    <div class="view">
+                        <input class="inputview" type="text" [(ngModel)]="mobile" [disabled]="disablemobile">
+                        <button mat-button color="primary" (click)="editmobile()">edit</button>
+                    </div>
+                </div>
+                <div class="singleview">
+                    <label>Address : </label>
+                    <br>
+                    <div class="view">
+                        <input class="inputview" type="text" [(ngModel)]="address" [disabled]="disableaddress">
+                        <button mat-button color="primary" (click)="editaddress()">edit</button>
+                    </div>
+                </div>
+                <div class="singleview">
+                    <label>Change password</label>
+                    <br> <br>
+                    <div class="special">
+                        <h3 style="float: left;">Enter Old Password : </h3>
+                        <input class="passinput" [(ngModel)]="newpass" type="password" (blur)="onBlurMethod()">
+                    </div>
+                    <br> <br>
+                    <div class="special">
+                        <h3 style="float: left;">Enter New Password : </h3>
+                        <input class="passinput" type="password" [(ngModel)]="newpassword" [disabled]="disablepassword">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button mat-button class="submit" (click)="Submit()">Save</button>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="deviceXs">
+        <div class="deviceview">
+            <div>
+                <div class="singleview">
+                    <label>username : </label>
+                    <br>
+                    <input class="deviceinputview" type="text" [(ngModel)]="username" [disabled]="true">
+                </div>
+                <div class="singleview">
+                    <label>Email : </label>
+                    <br>
+                    <div class="view">
+                        <input class="deviceinputview-2" type="text" [(ngModel)]="email" [disabled]="disableemail">
+                        <button mat-button color="primary" (click)="editemail()">edit</button>
+                    </div>
+                </div>
+                <div class="singleview">
+                    <label>Mobile number : </label>
+                    <br>
+                    <div class="view">
+                        <input class="deviceinputview-2" type="text" [(ngModel)]="mobile" [disabled]="disablemobile">
+                        <button mat-button color="primary" (click)="editmobile()">edit</button>
+                    </div>
+                </div>
+                <div class="singleview">
+                    <label>Address : </label>
+                    <br>
+                    <div class="view">
+                        <input class="deviceinputview-2" type="text" [(ngModel)]="address" [disabled]="disableaddress">
+                        <button mat-button color="primary" (click)="editaddress()">edit</button>
+                    </div>
+                </div>
+                <div class="singleview">
+                    <label>Change password</label>
+                    <br> <br>
+                    <div class="devicespecial">
+                        <h3 style="float: left;">Enter Old Password : </h3>
+                        <input class="devicepassinput" [(ngModel)]="newpass" type="password" (blur)="onBlurMethod()">
+                    </div>
+                    <br> <br>
+                    <div class="devicespecial">
+                        <h3 style="float: left;">Enter New Password : </h3>
+                        <input class="devicepassinput" type="password" [(ngModel)]="newpassword" [disabled]="disablepassword">
+                    </div>
+                </div>
+                <div>
+                    <button mat-button class="devicesubmit" (click)="Submit()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,93 @@
+.contact
+{
+    margin: 0;
+    padding: 0;
+}
+
+.leftview
+{
+    width: 30%;
+    margin-top: 3%;
+    margin-left: 15%;
+    font-size: 20px;
+    line-height: 120%;
+    float: left;
+}
+
+
+.rightview
+{
+    width: 50%;
+    float: right;
+    margin-top: 3%;
+}
+
+input
+{
+    width: 80%;
+    height: 30px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.submitbutton
+{
+    background-color: green;
+    color: #fff;
+}
+
+.correctview
+{
+    position: absolute;
+    top: 90%;
+    border-top: 2px solid #000;
+    width: 80%;
+    left: 10%;
+    right: 10%;
+    display: block;
+}
+
+.mat-slider-thumb-label {
+    transform: rotate(45deg) !important;
+    border-radius: 50% 50% 0 !important;
+}
+  
+.mat-slider-thumb {
+    transform: scale(0) !important;
+}
+  
+.mat-slider-thumb-label-text {
+    opacity: 1 !important;
+}
+
+.displayfeedback
+{
+    border: 2px solid #000;
+    margin: 10px;
+    width: 350px;
+}
+
+.rate
+{
+    color: orange;
+}
+
+
+.deviceview
+{
+    width: 75%;
+    margin-top: 3%;
+    margin-left: 15%;
+    margin-right: 0%;
+}
+
+.deviceform
+{
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+.bor{
+    border: 2px solid #000;
+    margin: 10px;
+}
