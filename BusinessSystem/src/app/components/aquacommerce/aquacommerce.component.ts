@@ -29,20 +29,20 @@ export class AquacommerceComponent implements OnInit , OnDestroy {
   public invalidpage=false;
 
   mediaSub: Subscription;
-  deviceXs: boolean;
+  deviceXs: boolean = false;
 
   constructor(public mediaobserver: MediaObserver, private requirements: RequirementsService, private dialog: MatDialog,
     private router: Router, private authorization: AuthorizationService,private OrderService: OrderService, 
     private statistics:StatisticsService, private snackbar: MatSnackBar){}
 
   ngOnDestroy(){
-    this.mediaSub.unsubscribe();
+    // this.mediaSub.unsubscribe();
   }
 
   ngOnInit(){
-    this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
-      this.deviceXs = res.mqAlias === "xs" ? true : false;
-    });
+    // this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
+    //   this.deviceXs = res.mqAlias === "xs" ? true : false;
+    // });
 
     this.GetStatistics();
 
@@ -169,7 +169,7 @@ export class AquacommerceComponent implements OnInit , OnDestroy {
   {
     if(res=="yes")
     {
-      this.change();
+      // this.change();
       const object = {
         email: this.user.email,
         username: this.user.username,

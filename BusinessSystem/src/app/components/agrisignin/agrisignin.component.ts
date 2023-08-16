@@ -15,7 +15,7 @@ import { StatisticsService } from '../../services/statistics.service';
 export class AgrisigninComponent implements OnInit, OnDestroy {
 
   mediaSub: Subscription;
-  deviceXs: boolean;
+  deviceXs: boolean = false;
   self: string;
   SigninForm: FormGroup;
   person;
@@ -28,9 +28,9 @@ export class AgrisigninComponent implements OnInit, OnDestroy {
     private authorization: AuthorizationService, private snackbar: MatSnackBar, private statistics: StatisticsService){}
 
   ngOnInit(){
-    this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
-      this.deviceXs = res.mqAlias === "xs" ? true : false;
-    });
+    // this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
+    //   this.deviceXs = res.mqAlias === "xs" ? true : false;
+    // });
     this.createForm();
     this.statistics.getStatistics()
     .subscribe((data) => {this.statis=data[0];console.log(this.statis.Monday.login)});
@@ -49,7 +49,7 @@ export class AgrisigninComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(){
-    this.mediaSub.unsubscribe();
+    // this.mediaSub.unsubscribe();
   }
 
   already()
@@ -89,7 +89,7 @@ export class AgrisigninComponent implements OnInit, OnDestroy {
     const failure = "Please Enter valid credentials";
     if(this.person!=null&&this.errMess==null)
     {
-      this.change();
+      // this.change();
       this.authorization.user=this.person.resp;
       this.snackbar.open(success, "dismiss", {
         duration: 2000,

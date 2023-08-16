@@ -20,16 +20,16 @@ export class AquatransportComponent implements OnInit , OnDestroy {
   invalidpage=false;
 
   mediaSub: Subscription;
-  deviceXs: boolean;
+  deviceXs: boolean = false;
   displayedColumns: string[] = ['productname', 'image', 'price', 'address','_id'];
   constructor(private transport: TransportService, public mediaobserver: MediaObserver
     ,private router: Router, private authorization: AuthorizationService) { }
 
   ngOnInit(): void {
 
-    this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
-      this.deviceXs = res.mqAlias === "xs" ? true : false;
-    });
+    // this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
+    //   this.deviceXs = res.mqAlias === "xs" ? true : false;
+    // });
 
     const det=JSON.parse(localStorage.getItem('token'));
     this.user=det.resp;
@@ -56,7 +56,7 @@ export class AquatransportComponent implements OnInit , OnDestroy {
   }
 
   ngOnDestroy(){
-    this.mediaSub.unsubscribe();
+    // this.mediaSub.unsubscribe();
   }
 
   Delete(product)

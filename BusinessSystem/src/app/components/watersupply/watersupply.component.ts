@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OnDestroy } from '@angular/core';
-import { MediaObserver, MediaChange } from '@angular/flex-layout';
+import { MediaObserver, MediaChange, ScreenTypes } from '@angular/flex-layout';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { AuthorizationService } from '../../services/authorization.service';
@@ -14,7 +14,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class WatersupplyComponent implements OnInit, OnDestroy {
 
   mediaSub: Subscription;
-  deviceXs: boolean;
+  deviceXs: boolean = false;
 
   public user;
   public username;
@@ -33,9 +33,6 @@ export class WatersupplyComponent implements OnInit, OnDestroy {
     private snackbar: MatSnackBar) { }
 
   ngOnInit(){
-    this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
-      this.deviceXs = res.mqAlias === "xs" ? true : false;
-    });
 
     const details=JSON.parse(localStorage.getItem('token'));
     this.user=details.resp;
@@ -54,7 +51,7 @@ export class WatersupplyComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(){
-    this.mediaSub.unsubscribe();
+    // this.mediaSub.unsubscribe();
   }
 
   onBlurMethod()

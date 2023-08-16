@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
 
   details;
   mediaSub: Subscription;
-  deviceXs: boolean;
+  deviceXs: boolean = false;
   public days=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
   constructor(private fb:FormBuilder,private route: ActivatedRoute, private router: Router, private authorization: AuthorizationService
     ,public mediaobserver: MediaObserver, private auth: AuthorizationService, private snackbar: MatSnackBar, private statistics:StatisticsService)
@@ -32,9 +32,9 @@ export class LoginComponent implements OnInit {
       this.type = params.get('type');
       console.log(this.type);
     });
-    this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
-      this.deviceXs = res.mqAlias === "xs" ? true : false;
-    });
+    // this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
+    //   this.deviceXs = res.mqAlias === "xs" ? true : false;
+    // });
     const details=JSON.parse(localStorage.getItem('token'));
     if(details)
     {
@@ -102,7 +102,7 @@ export class LoginComponent implements OnInit {
         duration: 1000,
       });
       this.authorization.user=this.details.resp[0];
-      this.change();
+      // this.change();
       this.router.navigate([`/${this.type}`]);
     }
     else

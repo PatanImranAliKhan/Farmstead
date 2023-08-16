@@ -1,4 +1,4 @@
-import { ThrowStmt } from '@angular/compiler';
+// import { ThrowStmt } from '@angular/compiler';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MediaObserver, MediaChange } from '@angular/flex-layout';
 import { Subscription } from 'rxjs';
@@ -12,14 +12,14 @@ export class AppComponent implements OnInit, OnDestroy {
   title = 'BusinessSystem';
 
   mediaSub: Subscription;
-  deviceXs: boolean;
+  deviceXs: boolean = false;
 
   constructor(public mediaobserver: MediaObserver){}
 
   ngOnInit(){
-    this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
-      this.deviceXs = res.mqAlias === "xs" ? true : false;
-    })
+    // this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
+    //   this.deviceXs = res.mqAlias === "xs" ? true : false;
+    // })
   }
 
   ngOnDestroy(){

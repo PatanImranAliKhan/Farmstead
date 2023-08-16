@@ -17,7 +17,7 @@ import { StatisticsService } from '../../services/statistics.service';
 export class CartComponent implements OnInit, OnDestroy {
 
   mediaSub: Subscription;
-  deviceXs: boolean;
+  deviceXs: boolean = false;
   statis;
 
   public user;
@@ -31,9 +31,9 @@ export class CartComponent implements OnInit, OnDestroy {
      private statistics:StatisticsService) { }
 
   ngOnInit(): void {
-    this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
-      this.deviceXs = res.mqAlias === "xs" ? true : false;
-    });
+    // this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
+    //   this.deviceXs = res.mqAlias === "xs" ? true : false;
+    // });
 
     this.GetStatistics();
 
@@ -59,7 +59,7 @@ export class CartComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(){
-    this.mediaSub.unsubscribe();
+    // this.mediaSub.unsubscribe();
   }
 
   Remove(product)
@@ -129,7 +129,7 @@ export class CartComponent implements OnInit, OnDestroy {
   {
     if(res=="yes")
     {
-      this.change();
+      // this.change();
       const object = {
         username: this.user.username,
         email:this.user.email,

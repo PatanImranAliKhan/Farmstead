@@ -12,19 +12,19 @@ import { OrderService } from '../../services/order.service';
 export class HeaderComponent implements OnInit, OnDestroy {
 
   mediaSub: Subscription;
-  deviceXs: boolean;
+  deviceXs: boolean = false;
   public present=false;
   constructor(private authorization: AuthorizationService, public mediaobserver: MediaObserver, private OrderService:OrderService) { }
 
   ngOnInit(): void {
-    this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
-      this.deviceXs = res.mqAlias === "xs" ? true : false;
-    });
+    // this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
+    //   this.deviceXs = res.mqAlias === "xs" ? true : false;
+    // });
     this.present=this.authorization.loggedin();
   }
 
   ngOnDestroy(){
-    this.mediaSub.unsubscribe();
+    // this.mediaSub.unsubscribe();
   }
 
   logout()
