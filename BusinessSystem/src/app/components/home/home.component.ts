@@ -12,14 +12,14 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit, OnDestroy {
 
   mediaSub: Subscription;
-  deviceXs: boolean;
+  deviceXs: boolean = false;
 
   constructor(public mediaobserver: MediaObserver, private router:Router, private auth:  AuthorizationService){}
 
   ngOnInit(){
-    this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
-      this.deviceXs = res.mqAlias === "xs" ? true : false;
-    });
+    // this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
+    //   this.deviceXs = res.mqAlias === "xs" ? true : false;
+    // });
     const details=JSON.parse(localStorage.getItem('token'));
     if(details)
     {
@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(){
-    this.mediaSub.unsubscribe();
+    // this.mediaSub.unsubscribe();
   }
 
 }

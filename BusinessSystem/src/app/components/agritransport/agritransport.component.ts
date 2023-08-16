@@ -19,7 +19,7 @@ export class AgritransportComponent implements OnInit, OnDestroy {
   invalidpage=false;
 
   mediaSub: Subscription;
-  deviceXs: boolean;
+  deviceXs: boolean = false;
 
   public user;
 
@@ -29,9 +29,9 @@ export class AgritransportComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-    this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
-      this.deviceXs = res.mqAlias === "xs" ? true : false;
-    });
+    // this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
+    //   this.deviceXs = res.mqAlias === "xs" ? true : false;
+    // });
 
     const det=JSON.parse(localStorage.getItem('token'));
     this.user=det.resp;
@@ -57,7 +57,7 @@ export class AgritransportComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(){
-    this.mediaSub.unsubscribe();
+    // this.mediaSub.unsubscribe();
   }
 
   Delete(product)

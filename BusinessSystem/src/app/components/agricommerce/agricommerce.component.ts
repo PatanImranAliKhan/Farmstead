@@ -20,7 +20,7 @@ export class AgricommerceComponent implements OnInit , OnDestroy {
   public products: any=[];
   public errMess;
   mediaSub: Subscription;
-  deviceXs: boolean;
+  deviceXs: boolean = false;
   public data="";
   invalid=false;
   cart=[];
@@ -35,13 +35,13 @@ export class AgricommerceComponent implements OnInit , OnDestroy {
     private statistics:StatisticsService, private snackbar: MatSnackBar){}
 
   ngOnDestroy(){
-    this.mediaSub.unsubscribe();
+    // this.mediaSub.unsubscribe();
   }
 
   ngOnInit(){
-    this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
-      this.deviceXs = res.mqAlias === "xs" ? true : false;
-    });
+    // this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
+    //   this.deviceXs = res.mqAlias === "xs" ? true : false;
+    // });
 
     const details=JSON.parse(localStorage.getItem('token'));
     this.user=details.resp;
@@ -170,7 +170,7 @@ export class AgricommerceComponent implements OnInit , OnDestroy {
   {
     if(res=="yes")
     {
-      this.change();
+      // this.change();
       const object = {
         username: this.user.username,
         email: this.user.email,

@@ -11,14 +11,14 @@ import { AuthorizationService } from '../../services/authorization.service';
 export class FooterComponent implements OnInit , OnDestroy {
 
   mediaSub: Subscription;
-  deviceXs: boolean;
+  deviceXs: boolean = false;
   public login=false;
   constructor(public mediaobserver: MediaObserver, private authorization: AuthorizationService) { }
 
   ngOnInit(): void {
-    this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
-      this.deviceXs = res.mqAlias === "xs" ? true : false;
-    });
+    // this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
+    //   this.deviceXs = res.mqAlias === "xs" ? true : false;
+    // });
     if(this.authorization.loggedin())
     {
       this.login=true;
@@ -30,6 +30,6 @@ export class FooterComponent implements OnInit , OnDestroy {
   }
 
   ngOnDestroy(){
-    this.mediaSub.unsubscribe();
+    // this.mediaSub.unsubscribe();
   }
 }

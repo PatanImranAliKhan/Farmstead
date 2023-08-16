@@ -30,14 +30,14 @@ export class SellaquaproductsComponent implements OnInit , OnDestroy {
   invalidpage=false;
 
   mediaSub: Subscription;
-  deviceXs: boolean;
+  deviceXs: boolean = false;
   constructor(public mediaobserver: MediaObserver,private snackbar: MatSnackBar,
     private aquagoods: AquagoodsService, private router: Router, private dialog: MatDialog, private transport: TransportService) { }
 
   ngOnInit(): void {
-    this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
-      this.deviceXs = res.mqAlias === "xs" ? true : false;
-    });
+    // this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
+    //   this.deviceXs = res.mqAlias === "xs" ? true : false;
+    // });
 
     const details=JSON.parse(localStorage.getItem('token'));
     this.user=details.resp;
@@ -55,7 +55,7 @@ export class SellaquaproductsComponent implements OnInit , OnDestroy {
   }
 
   ngOnDestroy(){
-    this.mediaSub.unsubscribe();
+    // this.mediaSub.unsubscribe();
   }
 
   submit()

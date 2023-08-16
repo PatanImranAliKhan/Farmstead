@@ -41,7 +41,7 @@ import { MatTabsModule } from '@angular/material/tabs';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FlexLayoutModule,
+    FlexLayoutModule.withConfig({ addOrientationBps: true }),
     MatToolbarModule,
     MatInputModule,
     MatIconModule,

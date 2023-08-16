@@ -29,14 +29,14 @@ export class BuyaquaproductsComponent implements OnInit, OnDestroy {
   invalidpage=false;
 
   mediaSub: Subscription;
-  deviceXs: boolean;
+  deviceXs: boolean = false;
   constructor(public mediaobserver: MediaObserver, private aquagoods: AquagoodsService,private dialog: MatDialog,
     private router: Router, private authorization: AuthorizationService,private OrderService: OrderService, private statistics:StatisticsService) { }
 
   ngOnInit(): void {
-    this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
-      this.deviceXs = res.mqAlias === "xs" ? true : false;
-    });
+    // this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
+    //   this.deviceXs = res.mqAlias === "xs" ? true : false;
+    // });
 
     const details=JSON.parse(localStorage.getItem('token'));
     this.user=details.resp;
@@ -74,7 +74,7 @@ export class BuyaquaproductsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(){
-    this.mediaSub.unsubscribe();
+    // this.mediaSub.unsubscribe();
   }
 
   Getall()
@@ -163,7 +163,7 @@ export class BuyaquaproductsComponent implements OnInit, OnDestroy {
   {
     if(res=="yes")
     {
-      this.change();
+      // this.change();
       const object = {
         email: this.user.email,
         username: this.user.username,

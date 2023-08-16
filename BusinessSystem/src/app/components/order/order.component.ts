@@ -13,7 +13,7 @@ import { StatisticsService } from '../../services/statistics.service';
 export class OrderComponent implements OnInit, OnDestroy {
 
   mediaSub: Subscription;
-  deviceXs: boolean;
+  deviceXs: boolean = false;
   len=false;
   value=50;
 
@@ -25,9 +25,9 @@ export class OrderComponent implements OnInit, OnDestroy {
     private StatisticsService: StatisticsService) { }
 
   ngOnInit(): void {
-    this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
-      this.deviceXs = res.mqAlias === "xs" ? true : false;
-    });
+    // this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
+    //   this.deviceXs = res.mqAlias === "xs" ? true : false;
+    // });
 
     const details=JSON.parse(localStorage.getItem('token'));
     this.user=details.resp;
@@ -55,13 +55,15 @@ export class OrderComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(){
-    this.mediaSub.unsubscribe();
+    // this.mediaSub.unsubscribe();
   }
 
   Cacel(product)
   {
     this.orderservice.DeleteOrder(product._id)
-    .subscribe((data)=>{console.log(data);this.change()},(err) =>{this.Error();console.log(err)});
+    .subscribe((data)=>{console.log(data);
+      // this.change()
+    },(err) =>{this.Error();console.log(err)});
     this.order=this.order.filter(x => x._id !=product._id);
     if(this.order.length==0)
     {

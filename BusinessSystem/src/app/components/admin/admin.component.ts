@@ -21,7 +21,7 @@ import { RequirementsService } from '../../services/requirements.service';
 export class AdminComponent implements OnInit, OnDestroy {
 
   mediaSub: Subscription;
-  deviceXs: boolean;
+  deviceXs: boolean = false;
   orders:any=[];
   waterRequests:any=[];
   AgriRequirement:any=[];
@@ -53,13 +53,13 @@ export class AdminComponent implements OnInit, OnDestroy {
     private router: Router, private RequirementsService: RequirementsService) { }
 
   ngOnDestroy(){
-    this.mediaSub.unsubscribe();
+    // this.mediaSub.unsubscribe();
   }
 
   ngOnInit(): void {
-    this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
-      this.deviceXs = res.mqAlias === "xs" ? true : false;
-    });
+    // this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
+    //   this.deviceXs = res.mqAlias === "xs" ? true : false;
+    // });
     const user=JSON.parse(localStorage.getItem('token'));
     if(user.username!="admin")
     {

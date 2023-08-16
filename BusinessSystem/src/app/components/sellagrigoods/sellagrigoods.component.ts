@@ -28,7 +28,7 @@ export class SellagrigoodsComponent implements OnInit, OnDestroy {
   result;
 
   mediaSub: Subscription;
-  deviceXs: boolean;
+  deviceXs: boolean = false;
   user;
   invalidpage=false;
   responce;
@@ -36,9 +36,9 @@ export class SellagrigoodsComponent implements OnInit, OnDestroy {
     private goods: GoodsService, private router: Router, private dialog: MatDialog, private transport: TransportService) { }
 
   ngOnInit(): void {
-    this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
-      this.deviceXs = res.mqAlias === "xs" ? true : false;
-    });
+    // this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
+    //   this.deviceXs = res.mqAlias === "xs" ? true : false;
+    // });
 
     const details=JSON.parse(localStorage.getItem('token'));
     this.user=details.resp;
@@ -55,7 +55,7 @@ export class SellagrigoodsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(){
-    this.mediaSub.unsubscribe();
+    // this.mediaSub.unsubscribe();
   }
 
 

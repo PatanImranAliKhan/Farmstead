@@ -40,6 +40,7 @@ AgriRoute.route('/results').get((req,res,next) => {
 });
 
 AgriRoute.route('/adduser').post((req,res,next) => {
+    console.log("req body: "+req.body)
     Agriculture.find({username: req.body.username,email: req.body.email,password: req.body.password})
     .then((resp) => {
         if(resp.length ==0)
@@ -131,6 +132,7 @@ AgriRoute.route('/getuser/:email/:password').get((req,res,next) => {
         res.send({resp,a});
     }
     else{
+        console.log("req body: "+req.params.email+"  "+req.params.password)
     Agriculture.find({$or: [ { username: req.params.email }, { email: req.params.email }] ,password : req.params.password})
     .then((resp) => {
         if(resp.length==0)
@@ -142,41 +144,41 @@ AgriRoute.route('/getuser/:email/:password').get((req,res,next) => {
         }
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
-        var transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-              user: 'noreply.farstead@gmail.com',
-              pass: 'farm@123'
-            }
-        });
+        // var transporter = nodemailer.createTransport({
+        //     service: 'gmail',
+        //     auth: {
+        //       user: 'noreply.farstead@gmail.com',
+        //       pass: 'farm@123'
+        //     }
+        // });
 
-        const output = `
-        <h3>Thank you for Login Farmstead in Agriculture Phase</h3>
-        <br>
-        <h1>Your details</h1>
-        <ul>
-            <li>Name: ${resp[0].username}</li>
-            <li>Email: ${resp[0].email}</li>
-            <li>Mobile Number: ${resp[0].mobile}</li>
-            <li>Address: ${resp[0].address}</li>
-        </ul>
-        `;
+        // const output = `
+        // <h3>Thank you for Login Farmstead in Agriculture Phase</h3>
+        // <br>
+        // <h1>Your details</h1>
+        // <ul>
+        //     <li>Name: ${resp[0].username}</li>
+        //     <li>Email: ${resp[0].email}</li>
+        //     <li>Mobile Number: ${resp[0].mobile}</li>
+        //     <li>Address: ${resp[0].address}</li>
+        // </ul>
+        // `;
           
-        const email=resp[0].email;
-        var mailOptions = {
-            from: 'noreply.farstead@gmail.com',
-            to: email,
-            subject: 'Login for Farmstead',
-            html: output
-        };
+        // const email=resp[0].email;
+        // var mailOptions = {
+        //     from: 'noreply.farstead@gmail.com',
+        //     to: email,
+        //     subject: 'Login for Farmstead',
+        //     html: output
+        // };
           
-        transporter.sendMail(mailOptions, function(error, info){
-            if (error) {
-              console.log(error);
-            } else {
-              console.log('Email sent: ' + info.response);
-            }
-        });
+        // transporter.sendMail(mailOptions, function(error, info){
+        //     if (error) {
+        //       console.log(error);
+        //     } else {
+        //       console.log('Email sent: ' + info.response);
+        //     }
+        // });
         let payload = { subject: resp._id };
         let token = jwt.sign(payload, 'secretkey');
         const a=false

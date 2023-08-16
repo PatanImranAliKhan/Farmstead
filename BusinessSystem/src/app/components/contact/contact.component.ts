@@ -15,7 +15,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ContactComponent  implements OnInit, OnDestroy {
 
   mediaSub: Subscription;
-  deviceXs: boolean;
+  deviceXs: boolean = false;
   type;
   star1=true;
   star2=false;
@@ -39,9 +39,9 @@ export class ContactComponent  implements OnInit, OnDestroy {
     private authorization:AuthorizationService, private router: Router, private snackbar: MatSnackBar,){}
 
   ngOnInit(){
-    this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
-      this.deviceXs = res.mqAlias === "xs" ? true : false;
-    });
+    // this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
+    //   this.deviceXs = res.mqAlias === "xs" ? true : false;
+    // });
     this.GetFeedback();
     const details=JSON.parse(localStorage.getItem('token'));
     this.user=details.resp;
@@ -61,7 +61,7 @@ export class ContactComponent  implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(){
-    this.mediaSub.unsubscribe();
+    // this.mediaSub.unsubscribe();
   }
 
   Submit()

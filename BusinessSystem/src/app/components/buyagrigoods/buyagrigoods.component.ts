@@ -27,16 +27,16 @@ export class BuyagrigoodsComponent implements OnInit, OnDestroy {
   statis;
   invalidpage=false;
   mediaSub: Subscription;
-  deviceXs: boolean;
+  deviceXs: boolean = false;
   orders: any=[];
 
   constructor(public mediaobserver: MediaObserver, private goods: GoodsService, private dialog: MatDialog,
     private router: Router, private authorization: AuthorizationService,private OrderService: OrderService, private statistics:StatisticsService) { }
 
   ngOnInit(): void {
-    this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
-      this.deviceXs = res.mqAlias === "xs" ? true : false;
-    });
+    // this.mediaSub = this.mediaobserver.media$.subscribe((res: MediaChange) => {
+    //   this.deviceXs = res.mqAlias === "xs" ? true : false;
+    // });
 
     this.GetStatistics();
     
@@ -76,7 +76,7 @@ export class BuyagrigoodsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(){
-    this.mediaSub.unsubscribe();
+    // this.mediaSub.unsubscribe();
   }
 
   Getall()
@@ -165,7 +165,7 @@ export class BuyagrigoodsComponent implements OnInit, OnDestroy {
   {
     if(res=="yes")
     {
-      this.change();
+      // this.change();
       const object = {
         email: this.user.email,
         username: this.user.username,

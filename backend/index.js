@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-mongoose.connect('mongodb+srv://BussinessSystem:BusinessSystem@firstcluster.fcybv.mongodb.net/BusinessSystem?retryWrites=true&w=majority',{useNewUrlParser: true , useUnifiedTopology: true, useFindAndModify: false});
+mongoose.connect('mongodb+srv://BussinessSystem:BusinessSystem@firstcluster.fcybv.mongodb.net/BusinessSystem?retryWrites=true&w=majority',{useNewUrlParser: true , useUnifiedTopology: true});
 
 const connection = mongoose.connection;
 
